@@ -49,7 +49,7 @@ public class HelloApplication extends Application {
             getWeather(command);
             waitingForCity = false;
         } else if (waitingForCurrency) {
-            currencyToCheck = command.toUpperCase(); // Приводим к верхнему регистру
+            currencyToCheck = command.toUpperCase();
             getCurrencyRates(currencyToCheck);
             waitingForCurrency = false;
         }
@@ -111,7 +111,7 @@ public class HelloApplication extends Application {
     }
 
     private void getCurrencyRates(String currency) {
-        String apiKey = "bb40537453064deba3d64eaf3f7a4d9a"; // Ваш ключ API
+        String apiKey = "bb40537453064deba3d64eaf3f7a4d9a";
         String urlString = String.format("https://openexchangerates.org/api/latest.json?app_id=%s&symbols=%s,USD,EUR", apiKey, currency);
 
         try {
